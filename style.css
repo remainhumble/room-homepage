@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "League Spartan";
+}
+
+:root {
+  --White: hsl(0, 100%, 100%);
+  --Grey-500: hsl(0, 0%, 63%);
+  --Grey-800: hsl(0, 0%, 27%);
+  --Black: hsl(0, 0%, 0%);
+}
+
+html,
+body {
+  width: 100%;
+}
+
+p {
+  font-size: 16px;
+}
+
+header {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  nav {
+    /* yet to add */
+    .navbar-toggler {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 1rem;
+      background: none;
+      border: none;
+    }
+    #mobile-navigation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      ul {
+        padding: 32px 11px;
+        display: flex;
+        width: 100%;
+        background-color: var(--White);
+        gap: 30px;
+        list-style: none;
+        display: none;
+        li {
+          padding: 10px;
+          a {
+            text-decoration: none;
+            text-transform: lowercase;
+            color: var(--Black);
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* SLIDES */
+
+.slider-mobile {
+  .slides {
+    img {
+      width: 100%;
+    }
+  }
+  .slide-buttons {
+    button {
+      padding: 12px 18px;
+      background-color: var(--Black);
+      border: none;
+      img {
+        width: 8px;
+      }
+    }
+  }
+}
+
+/* SLIDES */
+
+.discover,
+.about {
+  font-weight: 500;
+  padding: 28px 17px;
+  p {
+    padding: 21px 0;
+    line-height: 1.25rem;
+    color: var(--Grey-500);
+  }
+  a {
+    text-decoration: none;
+    color: var(--Black);
+    letter-spacing: 0.5rem;
+  }
+  img {
+    margin: 0 30px;
+  }
+  h4 {
+    text-transform: uppercase;
+     letter-spacing: 0.25rem;
+  }
+}
