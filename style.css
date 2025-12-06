@@ -73,8 +73,16 @@ header {
 
 .slider-mobile {
   .slides {
+    position: relative;
+    width: 100%;
+    margin: auto;
+    overflow: hidden; /* in case images are too big */
     img {
       width: 100%;
+      display: none;
+    }
+    img.displaySlide {
+      display: block;
     }
   }
   .slide-buttons {
@@ -110,6 +118,6 @@ header {
   }
   h4 {
     text-transform: uppercase;
-     letter-spacing: 0.25rem;
+    letter-spacing: 0.25rem;
   }
 }
