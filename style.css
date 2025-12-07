@@ -14,11 +14,6 @@
   --Black: hsl(0, 0%, 0%);
 }
 
-html,
-body {
-  width: 100%;
-}
-
 p {
   font-size: 16px;
 }
@@ -29,6 +24,7 @@ header {
   justify-content: center;
   align-items: center;
   padding: 1.25rem 1.5rem;
+  z-index: 1;
   top: 0;
   left: 0;
   right: 0;
@@ -80,18 +76,27 @@ header {
     img {
       width: 100%;
       display: none;
+      position: relative; /* Establishes a positioned ancestor */
     }
     img.displaySlide {
       display: block;
     }
   }
+
   .slide-buttons {
+    position: absolute;
+    bottom: 0; /* Aligns to the bottom */
+    right: 0; /* Aligns to the right */
+    display: flex;
     button {
       padding: 12px 18px;
       background-color: var(--Black);
       border: none;
+      cursor: pointer;
       img {
         width: 8px;
+        height: auto; /* Ensures the image height scales proportionally with the width */
+        display: block;
       }
     }
   }
