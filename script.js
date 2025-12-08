@@ -1,7 +1,25 @@
+// HEADER
+
+const menu = document.getElementById("menu");
+const navlinks = document.getElementById("navlinks");
+const close = document.getElementById("close");
+const overlay = document.getElementById("overlay");
+
+const showNavlinks = () => {
+  navlinks.style.display = "flex";
+  overlay.classList.add("active");
+};
+
+const hideNavlinks = () => {
+  navlinks.style.display = "none";
+  overlay.classList.remove("active");
+};
+
+menu.addEventListener("click", showNavlinks);
+close.addEventListener("click", hideNavlinks);
+
 // IMAGE SLIDER
 
-// Select only the actual slide images (they have class="slide").
-// This avoids accidentally selecting the arrow icons inside the buttons.
 const slides = document.querySelectorAll(".slides img.slide");
 const prevBtn = document.querySelector(".previous");
 const nextBtn = document.querySelector(".next");

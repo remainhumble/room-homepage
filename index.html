@@ -16,15 +16,20 @@
     <script defer src="script.js"></script>
   </head>
   <body>
+
     <header>
       <nav>
         <button class="navbar-toggler">
-          <img src="images/icon-hamburger.svg" alt="menu" />
-        </button>
+          <a id="menu" href="#"
+            ><img src="images/icon-hamburger.svg" alt="menu"
+          /></a>
+        </button>    <div id="overlay"></div>
         <div id="mobile-navigation">
-          <ul>
+          <ul id="navlinks">
             <li>
-              <a href=""><img src="images/icon-close.svg" alt="close" /></a>
+              <a id="close" href="#"
+                ><img src="images/icon-close.svg" alt="close"
+              /></a>
             </li>
             <li><a href="">Home</a></li>
             <li><a href="">Shop</a></li>
@@ -33,9 +38,12 @@
           </ul>
         </div>
       </nav>
-      <img src="images/logo.svg" alt="logo" href="#slider-mobile" />
+      <!-- Clicking the logo takes user to top of page -->
+      <a href="#slider-mobile"
+        ><img src="images/logo.svg" alt="logo" href="#slider-mobile"
+      /></a>
     </header>
-    <div class="slider-mobile">
+    <div id="slider-mobile">
       <div class="slides">
         <img
           class="slide"
@@ -52,7 +60,8 @@
           alt="mobile-image-hero-3"
         />
         <div class="slide-buttons">
-          <button class="previous"><img src="images/icon-angle-left.svg" alt="left" /></button
+          <button class="previous">
+            <img src="images/icon-angle-left.svg" alt="left" /></button
           ><button class="next">
             <img src="images/icon-angle-right.svg" alt="right" />
           </button>

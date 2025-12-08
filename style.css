@@ -18,6 +18,25 @@ p {
   font-size: 16px;
 }
 
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 999; /* ✅ ABOVE SLIDER */
+}
+
+#overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+
 header {
   position: fixed;
   display: flex;
@@ -30,6 +49,7 @@ header {
   right: 0;
   nav {
     /* yet to add */
+
     .navbar-toggler {
       position: absolute;
       top: 0;
@@ -43,7 +63,8 @@ header {
       top: 0;
       left: 0;
       right: 0;
-      ul {
+      z-index: 999;
+      #navlinks {
         padding: 32px 11px;
         display: flex;
         width: 100%;
@@ -51,6 +72,7 @@ header {
         gap: 30px;
         list-style: none;
         display: none;
+
         li {
           padding: 10px;
           a {
@@ -67,11 +89,10 @@ header {
 
 /* SLIDES */
 
-.slider-mobile {
+#slider-mobile {
   .slides {
     position: relative;
     width: 100%;
-    margin: auto;
     overflow: hidden; /* in case images are too big */
     img {
       width: 100%;
