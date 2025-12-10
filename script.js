@@ -1,7 +1,7 @@
 // HEADER
 
 const menu = document.getElementById("menu");
-const navlinks = document.getElementById("navlinks");
+const navlinks = document.getElementById("mobile-navlinks");
 const close = document.getElementById("close");
 const overlay = document.getElementById("overlay");
 
