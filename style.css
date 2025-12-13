@@ -155,6 +155,12 @@ header {
 }
 
 @media (min-width: 700px) {
+  body {
+    margin: 0;
+    width: 100%;
+    min-width: 100%;
+  }
+
   #menu {
     display: none;
   }
@@ -190,5 +196,52 @@ header {
         }
       }
     }
+  }
+
+  .slides {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #layout {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-auto-rows: 300px; /* or use auto if you want content-based height */
+    gap: 0; /* or add spacing if needed */
+  }
+
+  #slider-mobile {
+    grid-column: 1 / 4;
+    img.displaySlide {
+      height: auto;
+      object-fit: contain;
+    }
+  }
+
+  #slider-mobile .slides img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none; /* your slider logic will toggle this */
+  }
+
+  .slide-info {
+    grid-column: 4 / 6;
+    padding: 37px;
+  }
+
+  #dark {
+    grid-column: 1 / 2;
+  }
+
+  .about {
+    grid-column: 2 / 5;
+  }
+
+  #light {
+    grid-column: 5 / 6;
   }
 }
