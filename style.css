@@ -14,6 +14,23 @@
   --Black: hsl(0, 0%, 0%);
 }
 
+html,
+body {
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  min-height: 100vh;
+}
+
 p {
   font-size: 16px;
 }
@@ -100,12 +117,16 @@ header {
     position: relative;
     width: 100%;
     overflow: hidden; /* in case images are too big */
-    img {
-      width: 100%;
+    picture {
       display: none;
-      position: relative; /* Establishes a positioned ancestor */
     }
-    img.displaySlide {
+    picture.displaySlide {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+    picture img {
+      width: 100%;
       display: block;
     }
   }
@@ -126,6 +147,10 @@ header {
         display: block;
       }
     }
+  }
+
+  .slide-buttons button:hover {
+    background-color: var(--Grey-800);
   }
 }
 
@@ -154,11 +179,19 @@ header {
   }
 }
 
+#shopnow:hover {
+  color: var(--Grey-500);
+}
+
+#shopnow:hover img {
+  filter: brightness(0) saturate(100%) invert(75%) sepia(11%) saturate(4%)
+    hue-rotate(353deg) brightness(83%) contrast(94%);
+}
+
 @media (min-width: 700px) {
   body {
-    margin: 0;
-    width: 100%;
-    min-width: 100%;
+    display: flex;
+    flex-direction: column;
   }
 
   #menu {
@@ -209,7 +242,7 @@ header {
   #layout {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    grid-auto-rows: 300px; /* or use auto if you want content-based height */
+    grid-auto-rows: auto;
     gap: 0; /* or add spacing if needed */
   }
 
@@ -224,7 +257,6 @@ header {
   #slider-mobile .slides img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
     display: none; /* your slider logic will toggle this */
   }
 

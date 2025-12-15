@@ -38,7 +38,7 @@ const slideData = [
   },
 ];
 
-const slides = document.querySelectorAll(".slides img.slide");
+const slides = document.querySelectorAll(".slides picture.slide");
 const prevBtn = document.querySelector(".previous");
 const nextBtn = document.querySelector(".next");
 const slideHeading = document.getElementById("heading");
@@ -53,7 +53,7 @@ function initialiseSlider() {
 }
 
 function showSlide(index) {
-   // ✅ Prevent invalid index
+  // ✅ Prevent invalid index
   if (index < 0) index = slideData.length - 1;
   if (index >= slideData.length) index = 0;
   // nothing to do if there are no slides

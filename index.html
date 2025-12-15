@@ -58,20 +58,27 @@
     <div id="layout">
       <div class="grid-item" id="slider-mobile">
         <div class="slides">
-          <img
-            class="slide"
-            src="images/mobile-image-hero-1.jpg"
-            alt="mobile-image-hero-1"
-          />
-          <img
-            class="slide"
-            src="images/mobile-image-hero-2.jpg"
-            alt="mobile-image-hero-2"
-          /><img
-            class="slide"
-            src="images/mobile-image-hero-3.jpg"
-            alt="mobile-image-hero-3"
-          />
+          <picture class="slide">
+            <source
+              media="(min-width: 700px)"
+              srcset="images/desktop-image-hero-1.jpg"
+            />
+            <img src="images/mobile-image-hero-1.jpg" alt="hero-image-1" />
+          </picture>
+          <picture class="slide">
+            <source
+              media="(min-width: 700px)"
+              srcset="images/desktop-image-hero-2.jpg"
+            />
+            <img src="images/mobile-image-hero-2.jpg" alt="hero-image-2" />
+          </picture>
+          <picture class="slide">
+            <source
+              media="(min-width: 700px)"
+              srcset="images/desktop-image-hero-3.jpg"
+            />
+            <img src="images/mobile-image-hero-3.jpg" alt="hero-image-3" />
+          </picture>
           <div class="slide-buttons">
             <button class="previous">
               <img src="images/icon-angle-left.svg" alt="left" /></button
@@ -89,7 +96,9 @@
         your vision to life. Create a room in your own style with our collection
         and make your property a reflection of you and what you love. -->
         </p>
-        <a href="#">SHOP NOW<img src="images/icon-arrow.svg" alt="" /></a>
+        <a id="shopnow" href="#"
+          >SHOP NOW<img src="images/icon-arrow.svg" alt="shop-now"
+        /></a>
       </div>
       <div class="grid-item" id="dark">
         <img src="images/image-about-dark.jpg" alt="" />
