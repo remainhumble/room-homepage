@@ -19,6 +19,48 @@ body {
   overflow-x: hidden;
 }
 
+/* Accessibility: Screen reader only content */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Accessibility: Skip link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--Black);
+  color: var(--White);
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+/* Accessibility: Focus states for keyboard navigation */
+button:focus,
+a:focus {
+  outline: 3px solid var(--Black);
+  outline-offset: 2px;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--Black);
+  outline-offset: 2px;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -88,12 +130,16 @@ header {
           left: 0;
           bottom: 0;
           height: 2px;
-          width: 0%;
+          width: 100%;
           background: var(--White);
-          transition: width 0.3s ease;
+          transition: transform 0.3s ease;
+          transform: scaleX(0);
+          transform-origin: center;
         }
         li:hover::after {
           width: 100%;
+          transform: scaleX(1);
+          transform-origin: center;
         }
       }
     }
@@ -104,6 +150,13 @@ header {
       padding: 1rem;
       background: none;
       border: none;
+      cursor: pointer;
+    }
+    .close-button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
     }
     #mobile-navigation {
       position: fixed;
@@ -137,12 +190,16 @@ header {
           left: 0;
           bottom: 0;
           height: 2px;
-          width: 0%;
+          width: 100%;
           background: var(--Black);
-          transition: width 0.3s ease;
+          transition: transform 0.3s ease;
+          transform: scaleX(0);
+          transform-origin: center;
         }
         li:hover::after {
           width: 100%;
+          transform: scaleX(1);
+          transform-origin: center;
         }
       }
     }
